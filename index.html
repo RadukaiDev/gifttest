@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="icon" href="icons/caja-de-regalo.png">
+    <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Un regalo</title>
+</head>
+<body>
+    <div class="main">
+   <br>
+    <div class="container" id="fondo">
+        <div class="contairer__text">
+            <h2 id="textoSuper">Te quiero dar este regalo</h2>
+        </div>
+        <div class="contairer__text text--down">
+            <h2 id="textoInf">A ti la persona más bella...</h2>
+        </div>
+    </div>
+<br>
+    <div class="btn">
+        <button class="btn__next" onclick="cambiarFondo(),cambiarTextoSuper(),cambiarTextoInf()">
+            Siguiente
+        </button>
+    </div>
+</div>
+    <script>
+
+const textoArriba = ["Te quiero dar este regalo","a quien iría a buscar incluso por las estrellas...",
+"Por ser la flor más hermosa","y por llenarme de sonrisas","Amo tu compañia",
+"Por encima del mal te protegería","Por todo lo que me haces sentir","porque contigo quiero vivir..."];
+const textoBajo = ["A ti la persona más bella...","Por ser el sol que de luz llena mi planeta",
+"una mujer tan grandiosa...","con tantas cosas graciosas","y yo a ti no te cambiaría",
+"y en la enfermedad te cuidaría","te regalo mi corazón","una historia de amor y fantasía"];        
+const imagenes = ["/bg/regalo.png","/bg/espacio.png","/bg/flor.png","/bg/feliz.png","/bg/pinguinos.png","/bg/dragon.png","/bg/corazon.png","/bg/nosotros.png"];
+let indice=0,indiceTexto=0,indiceTextoBajo=0;
+
+function cambiarTextoSuper() {
+            let h2 = document.getElementById("textoSuper");
+            h2.classList.add("fade");
+            setTimeout(() => {
+                indiceTexto = (indiceTexto+1) % textoArriba.length;
+                h2.innerText = textoArriba[indiceTexto];
+                h2.classList.remove("fade");
+            }, 1300); 
+        }
+
+function cambiarTextoInf() {
+            let h2 = document.getElementById("textoInf");
+            h2.classList.add("fade");
+            setTimeout(() => {
+                indiceTextoBajo = (indiceTextoBajo+1) % textoBajo.length;
+                h2.innerText = textoBajo[indiceTextoBajo];
+                h2.classList.remove("fade");
+            }, 1500); 
+        }
+
+function cambiarFondo() {
+            let div = document.getElementById("fondo");
+            div.classList.add("fade");
+            setTimeout(() => {
+                indice = (indice + 1) % imagenes.length;
+                div.style.backgroundImage = `url('${imagenes[indice]}')`;
+                div.classList.remove("fade");
+            }, 1000); 
+        }
+    </script>
+</body>
+</html>
