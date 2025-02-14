@@ -1,0 +1,78 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Exo+2:ital,wght@0,100..900;1,100..900&family=Fira+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Pacifico&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap');
+
+body {
+    display: grid;
+    justify-content: center;
+    margin: 0;
+    position: relative;
+    height: 100vh;
+    overflow: hidden;
+}
+
+body::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('bg/bg.jpg');
+    background-size: cover;
+    background-position: center;
+    filter: blur(10px); /* Ajusta el nivel de blur */
+    z-index: -1;
+}
+
+.container{
+    background-image: url('bg/regalo.png');
+    background-size: cover;
+    border: 10px rgba(255, 221, 221, 0.911) solid;
+    width: 550px;
+    height: 500px;
+    border-radius: 10px;
+    transition: opacity 1s ease-in-out;
+}
+
+.fade {
+    opacity: 0; 
+}
+
+.contairer__text{
+    color: white;
+    font-family: cursive;
+    text-align: center;
+    width: 550px;
+    height: 50px;
+    border-radius: 10px;
+}
+
+.contairer__text h2{
+    padding-top: 10px;
+    padding-bottom: 10px;
+    transition: opacity 1s ease-in-out;
+    background-color: rgba(106, 195, 247, 0.705);
+}
+
+.text--down{
+    margin-top: 65%;
+}
+
+.btn{
+    text-align: center;
+}
+
+.btn__next{
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    background-color: white;
+    border: none;
+    border-radius: 10px;
+    width: 80px;
+    height: 40px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.btn__next:hover {
+    background-color: #6b1d4b; 
+    color: white;
+    transform: scale(1.1); 
+}
